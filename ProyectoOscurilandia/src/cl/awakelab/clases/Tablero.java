@@ -12,6 +12,7 @@ public class Tablero {
 
 		Carro[] carros = new Carro[18];
 
+		
 		ArrayList Huevo[];
 	}
 }
