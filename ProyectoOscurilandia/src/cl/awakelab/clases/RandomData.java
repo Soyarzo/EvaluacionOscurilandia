@@ -1,6 +1,7 @@
 
 package cl.awakelab.clases;
 
+
 public class RandomData {
 
 	private final String[] NOMBRES = { "Isabella", "Sofia", "Agustina", "Emilia", "Josefa", "Isidora", "Emma",
@@ -18,7 +19,7 @@ public class RandomData {
 	public final String[] MARCAS = {"Scania", "Man", "Volvo", "Mercedes", "Isuzu", "GMC", "Hino", 
 			"Ford", "Hummer", "Mack Trucks" };
 
-	public final 
+	
 	
 	private String nombre;
 	private String apellido;
@@ -29,6 +30,8 @@ public class RandomData {
 		this.generarNombre();
 		this.generarApellido();
 		this.generarMarca();
+		this.generarFecha();
+		
 	}
 
 	private void generarNombre() {
@@ -38,6 +41,7 @@ public class RandomData {
 	private void generarApellido() {
 		this.apellido = APELLIDOS[(int) (Math.random() * APELLIDOS.length)];
 	}
+	
 
 	public String getNombreCompleto() {
 		return this.nombre + " " + this.apellido;
@@ -53,7 +57,16 @@ public class RandomData {
 	
 	private void generarFecha() {
 		
+		this.mes = azar(1,12);
+		this.dia = azar(1,30);
+		this.year = azar(1990,2020);
 	}
+
+	public String getFecha() {
+		return this.dia + "/" + this.mes + "/" + this.year;
+	}
+	
+	
 	public static int azar(int desde, int hasta) {
 		int azar = (int) (Math.random() * (hasta + 1 - desde)) + desde; //
 		return azar;

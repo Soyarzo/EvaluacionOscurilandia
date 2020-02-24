@@ -11,7 +11,7 @@ public class Kromi extends Carro {
 		RandomData azares = new RandomData();
 		
 		this.marca = azares.getMarca();
-		this.fechaFabricacion = ;
+		this.fechaFabricacion = azares.getFecha();
 	}
 
 	@Override
@@ -21,3 +21,4 @@ public class Kromi extends Carro {
 	}
 
 }
+
