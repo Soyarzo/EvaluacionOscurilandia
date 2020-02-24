@@ -1,6 +1,6 @@
 package cl.awakelab.clases;
 
-public class Carro {
+public abstract class Carro {
 	
 	int cantidadOcupantes;
 	String fechaIngreso;
