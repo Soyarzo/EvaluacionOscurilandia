@@ -6,9 +6,11 @@ public class Caguano extends Carro {
 	String color;
 
 	public Caguano() {
-
-		this.alcanceDeTiro = alcanceDeTiro;
-		this.color = color;
+		super();
+		RandomData azares = new RandomData();
+		
+		this.alcanceDeTiro = azares.getAlcance();
+		this.color = azares.getColor();
 	}
 
 	@Override

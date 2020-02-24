@@ -19,19 +19,24 @@ public class RandomData {
 	public final String[] MARCAS = {"Scania", "Man", "Volvo", "Mercedes", "Isuzu", "GMC", "Hino", 
 			"Ford", "Hummer", "Mack Trucks" };
 
-	
+	public final String[] COLORES = {"Azul", "Rojo", "Negro", "Verde", "Rosado","Amarillo"};
 	
 	private String nombre;
 	private String apellido;
 	private String marca;
 	private int dia, mes, year;
+	private float alcance;
+	private String color;
+	private float armadura;
 	
 	public RandomData() {
 		this.generarNombre();
 		this.generarApellido();
 		this.generarMarca();
 		this.generarFecha();
-		
+		this.generarAlcance();
+		this.generarColor();
+		this.generarArmadura();
 	}
 
 	private void generarNombre() {
@@ -41,7 +46,6 @@ public class RandomData {
 	private void generarApellido() {
 		this.apellido = APELLIDOS[(int) (Math.random() * APELLIDOS.length)];
 	}
-	
 
 	public String getNombreCompleto() {
 		return this.nombre + " " + this.apellido;
@@ -55,8 +59,7 @@ public class RandomData {
 		return this.marca;
 	}
 	
-	private void generarFecha() {
-		
+	private void generarFecha() {	
 		this.mes = azar(1,12);
 		this.dia = azar(1,30);
 		this.year = azar(1990,2020);
@@ -66,7 +69,29 @@ public class RandomData {
 		return this.dia + "/" + this.mes + "/" + this.year;
 	}
 	
+	private void generarAlcance() {
+		this.alcance = azar(1, 15);
+	}
 	
+	public float getAlcance() {
+		return this.alcance;
+	}
+	
+	private void generarColor() {
+		this.color = COLORES[(int) (Math.random() * COLORES.length)];
+	}
+	
+	public String getColor() {
+		return this.color;
+	}
+	
+	private void generarArmadura() {
+		this.armadura = azar(0, 100);
+	}
+	
+	public String getArmadura() {
+		return this.armadura + "%";
+	}
 	public static int azar(int desde, int hasta) {
 		int azar = (int) (Math.random() * (hasta + 1 - desde)) + desde; //
 		return azar;

@@ -2,13 +2,15 @@ package cl.awakelab.clases;
 
 public class Trupalla extends Carro {
 
-	int armadura;
+	String armadura;
 	String conductor;
 
 	public Trupalla() {
-
-		this.armadura = armadura;
-		this.conductor = conductor;
+		super();
+		RandomData azares = new RandomData();
+		
+		this.armadura = azares.getArmadura();
+		this.conductor = azares.getNombreCompleto();
 	}
 
 	@Override
