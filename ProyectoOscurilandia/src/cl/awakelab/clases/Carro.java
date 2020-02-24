@@ -4,10 +4,11 @@ public abstract class Carro {
 	
 	int cantidadOcupantes;
 	String fechaIngreso;
-	int[] posicionTablero;
+	int[] posicionTablero = new int[2];
 	
 	public Carro() {
-		this.posicionTablero = new int[2];
+		setPosicionTablero(RandomData.azar(0, 15),RandomData.azar(0, 15));
+		setCantidadOcupantes(RandomData.azar(0, 10));
 		
 	}
 
