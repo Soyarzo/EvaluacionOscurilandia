@@ -2,7 +2,7 @@ package cl.awakelab.clases;
 
 import java.util.ArrayList;
 
-import cl.awakelab.evaluacion.Carro;
+import cl.awakelab.clases.Carro;
 
 public class Tablero {
 
