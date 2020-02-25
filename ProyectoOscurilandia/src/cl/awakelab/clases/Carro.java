@@ -19,7 +19,6 @@ public class Carro {
 		setFechaIngreso(azares.getFecha());
 		setFila();
 		setColumna();
-		
 	}
 	
 
@@ -78,7 +77,8 @@ public class Carro {
 
 	@Override
 	public String toString() {
-		return "Carro [cantidadOcupantes=" + cantidadOcupantes + ", fechaIngreso=" + fechaIngreso + ", posicionTablero="
+		return "Carro [cantidadOcupantes=" + cantidadOcupantes + 
+				", fechaIngreso=" + fechaIngreso + ", posicionTablero="
 				+ Arrays.toString(posicionTablero) + ", modelo=" + modelo + "]";
 	}
 

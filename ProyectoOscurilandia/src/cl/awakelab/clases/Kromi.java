@@ -30,10 +30,5 @@ public class Kromi extends Carro {
 		this.fechaFabricacion = fechaFabricacion;
 	}
 	
-	
-	
-	
-	
-	
 }
 
