@@ -2,6 +2,8 @@ package cl.awakelab.clases;
 
 import java.util.ArrayList;
 
+import javax.net.ssl.TrustManagerFactorySpi;
+
 import cl.awakelab.clases.Carro;
 
 public class Tablero {
@@ -17,6 +19,7 @@ public class Tablero {
 	public Tablero() {
 		carros = new Carro[18];
 		huevos = new ArrayList();	
+		llenarTablero();
 	}
 	
 	public Carro[] getCarros() {
@@ -32,17 +35,44 @@ public class Tablero {
 		Carro nuevoCarro;
 		if(modelo == KROMI) {
 			nuevoCarro = new Kromi();
-			return nuevoCarro;	
+				
 		}else if (modelo == CAGUANO) {
 			nuevoCarro = new Caguano();
-			return nuevoCarro;
+	
 		}else   {
 			nuevoCarro =new Trupalla();
-			return nuevoCarro;
+
 		}
+		return nuevoCarro;
 	}
 	
-	public void ingresarATablero(Carro carro) {
+	public void ingresarATablero(Kromi carro) {
+		boolean creado =true;
+		for(int i=0;i<18 && creado;i++) {
+			if (carros[i]==null) {
+				carros[i]=carro;
+				creado = false;
+				if (i>0) {
+					cambioPosicionTablero(i);
+				}
+			}	
+		}		
+	}
+	
+	public void ingresarATablero(Caguano carro) {
+		boolean creado =true;
+		for(int i=0;i<18 && creado;i++) {
+			if (carros[i]==null) {
+				carros[i]=carro;
+				creado = false;
+				if (i>0) {
+					cambioPosicionTablero(i);
+				}
+			}	
+		}		
+	}
+	
+	public void ingresarATablero(Trupalla carro) {
 		boolean creado =true;
 		for(int i=0;i<18 && creado;i++) {
 			if (carros[i]==null) {
@@ -57,13 +87,13 @@ public class Tablero {
 	
 	public void llenarTablero() {
 		for (int i = 0;i<3;i++) {
-			ingresarATablero(crearCarro(0));
+			ingresarATablero((Kromi)crearCarro(KROMI));
 		}
-		for (int i = 3;i<8;i++) {
-			ingresarATablero(crearCarro(2));
+		for (int i = 0;i<5;i++) {
+			ingresarATablero((Caguano)crearCarro(CAGUANO));
 		}
-		for (int i = 8;i<18;i++) {
-			ingresarATablero(crearCarro(1));
+		for (int i = 0;i<10;i++) {
+			ingresarATablero((Trupalla)crearCarro(TRUPALLA));
 		}
 	}
 	
@@ -80,7 +110,7 @@ public class Tablero {
 			if(condicion) {
 				carros[posicionCarroNuevo].setColumna();
 				carros[posicionCarroNuevo].setFila();	
-				j=0;
+				cambioPosicionTablero(j);
 			}
 		
 		/*

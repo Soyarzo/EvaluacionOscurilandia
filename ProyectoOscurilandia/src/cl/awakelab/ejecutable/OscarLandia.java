@@ -1,11 +1,18 @@
 package cl.awakelab.ejecutable;
 
 import cl.awakelab.clases.Tablero;
+import cl.awakelab.clases.Trupalla;
 import cl.awakelab.clases.Carro;
 
 public class OscarLandia {
 
 	public static void main(String[] args) {
+		
+		
+		Tablero juego = new Tablero();
+		System.out.println(((Trupalla)juego.getCarros()[10]).getArmadura());
+		
+		
 		
 		
 		
@@ -15,7 +22,7 @@ public class OscarLandia {
 		System.out.println();
 		
 		
-		Tablero juego = new Tablero();
+	//	Tablero juego = new Tablero();
 		
 		for (int i = 0;i<18;i++) {
 			Carro prueba = new Carro();
