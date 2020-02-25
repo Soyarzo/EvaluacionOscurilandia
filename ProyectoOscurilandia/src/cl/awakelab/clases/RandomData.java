@@ -59,10 +59,20 @@ public class RandomData {
 		return this.marca;
 	}
 	
-	private void generarFecha() {	
-		this.mes = azar(1,12);
+	public void setDia() {
 		this.dia = azar(1,30);
+	}
+	public void setMes() {
+		this.mes = azar(1,12);
+	}
+	public void setYear() {
 		this.year = azar(1990,2020);
+	}
+	
+	private void generarFecha() {	
+		this.mes = setMes();
+		this.dia = setDia();
+		this.year = setYear();
 	}
 
 	public String getFecha() {

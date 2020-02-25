@@ -7,8 +7,10 @@ public abstract class Carro {
 	int[] posicionTablero = new int[2];
 	
 	public Carro() {
+		RandomData azares = new RandomData();
 		setPosicionTablero(RandomData.azar(0, 15),RandomData.azar(0, 15));
 		setCantidadOcupantes(RandomData.azar(0, 10));
+		setFechaIngreso(azares.getFecha());
 		
 	}
 
