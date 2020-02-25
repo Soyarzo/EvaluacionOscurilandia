@@ -2,20 +2,35 @@ package cl.awakelab.clases;
 
 public class Caguano extends Carro {
 
-	float alcanceDeTiro;
-	String color;
+	private int alcanceDeTiro;
+	private String colorConfeti;
 
 	public Caguano() {
 		super();
 		RandomData azares = new RandomData();
 		
-		this.alcanceDeTiro = azares.getAlcance();
-		this.color = azares.getColor();
+		setAlcanceDeTiro(azares.getAlcance());
+		setColorConfeti(azares.getColor());
+		setModelo("Caguano");
 	}
 
-	@Override
-	public String modelo() {
-
-		return "Caguano";
+	public float getAlcanceDeTiro() {
+		return alcanceDeTiro;
 	}
+
+	public void setAlcanceDeTiro(int alcanceDeTiro) {
+		this.alcanceDeTiro = alcanceDeTiro;
+	}
+
+	public String getColorConfeti() {
+		return colorConfeti;
+	}
+
+	public void setColorConfeti(String colorConfeti) {
+		this.colorConfeti = colorConfeti;
+	}
+
+	
+
+
 }

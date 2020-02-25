@@ -25,9 +25,9 @@ public class RandomData {
 	private String apellido;
 	private String marca;
 	private int dia, mes, year;
-	private float alcance;
+	private int alcance;
 	private String color;
-	private float armadura;
+	private int armadura;
 	
 	public RandomData() {
 		this.generarNombre();
@@ -83,7 +83,7 @@ public class RandomData {
 		this.alcance = azar(1, 15);
 	}
 	
-	public float getAlcance() {
+	public int getAlcance() {
 		return this.alcance;
 	}
 	
@@ -96,11 +96,11 @@ public class RandomData {
 	}
 	
 	private void generarArmadura() {
-		this.armadura = azar(0, 100);
+		this.armadura = azar(0, 5);
 	}
 	
-	public String getArmadura() {
-		return this.armadura + "%";
+	public int getArmadura() {
+		return this.armadura;
 	}
 	public static int azar(int desde, int hasta) {
 		int azar = (int) (Math.random() * (hasta + 1 - desde)) + desde; //

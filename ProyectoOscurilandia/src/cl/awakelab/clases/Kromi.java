@@ -2,23 +2,38 @@ package cl.awakelab.clases;
 
 public class Kromi extends Carro {
 	
-
-	String marca;
-	String fechaFabricacion;
+	private String marca;
+	private String fechaFabricacion;
 
 	public Kromi() {
 		super();
 		RandomData azares = new RandomData();
 		
-		this.marca = azares.getMarca();
-		this.fechaFabricacion = azares.getFecha();
+		setMarca(azares.getMarca());
+		setFechaFabricacion(azares.getFecha());
+		setModelo("Kromi");
 	}
 
-	@Override
-	public String modelo() {
-
-		return "Kromi";
+	public String getMarca() {
+		return marca;
 	}
 
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getFechaFabricacion() {
+		return fechaFabricacion;
+	}
+
+	public void setFechaFabricacion(String fechaFabricacion) {
+		this.fechaFabricacion = fechaFabricacion;
+	}
+	
+	
+	
+	
+	
+	
 }
 
