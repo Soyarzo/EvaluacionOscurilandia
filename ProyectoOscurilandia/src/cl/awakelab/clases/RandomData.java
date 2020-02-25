@@ -70,9 +70,9 @@ public class RandomData {
 	}
 	
 	private void generarFecha() {	
-		this.mes = setMes();
-		this.dia = setDia();
-		this.year = setYear();
+		setMes();
+		setDia();
+		setYear();
 	}
 
 	public String getFecha() {
