@@ -140,7 +140,7 @@ public class Tablero {
 			this.matrizJugador[huevo.getFila()][huevo.getColumna()] = "| H |";
 			this.matrizCarros[huevo.getFila()][huevo.getColumna()] = "| H |";
 		} else if (this.matrizCarros[huevo.getFila()][huevo.getColumna()].equals("| T |")) {
-			huevo.setPuntaje(2);
+			huevo.setPuntaje(1);
 			this.matrizJugador[huevo.getFila()][huevo.getColumna()] = "| H |";
 			this.matrizCarros[huevo.getFila()][huevo.getColumna()] = "| H |";
 		} else

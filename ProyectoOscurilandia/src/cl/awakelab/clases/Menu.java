@@ -9,8 +9,8 @@ public class Menu {
 
 	private static void bienvenida() {
 		escribir("  --** Bienvenidos ciudadanos de Oscurilandia", true);
-		escribir("  --** Ayuda a nuestros superhéroes anónimos “FirstLine”.", true);
-		escribir("  --** a derrotar a la élite de seguridad PKS", true);
+		escribir("  --** Ayuda a nuestros superheroes anonimos FirstLine", true);
+		escribir("  --** a derrotar a la elite de seguridad PKS", true);
 		escribir("  --** Sigue las intrucciones para eliminar a los enemigos", true);
 		escribir("  --** Situados en la camara Secreta", true);
 
@@ -39,8 +39,20 @@ public class Menu {
 			switch (seleccion) {
 			case 1:
 				try {
-					juego.lanzarHuevo(juego.crearHuevo(leerEntero("Ingrese fila"), leerEntero("ingrese columna")));
+					int fila=0;
+					int columna=0;
+					boolean condicion; 
+					do {
+						escribir("ingresar nuemero entre 0 y 14",true);
+						
+						fila=leerEntero("Ingrese fila");
+						columna =leerEntero("ingrese columna");
+						condicion = (fila>14 || fila<0 || columna<0 || columna>14);	
+					}while(condicion);
+					juego.lanzarHuevo(juego.crearHuevo(fila,columna ));
 				} catch (InputMismatchException e) {
+					System.out.println("ingrese solo numeros "+e);
+					
 				}
 				break;
 
@@ -103,13 +115,13 @@ public class Menu {
 	}
 
 	/**
-	 * El método escribir() es una función orientada a escribir mensaje. El mensaje
-	 * es el mismo pero la funcion utilizada dependerá del valor booleano que se
+	 * El mÃ©todo escribir() es una funciÃ³n orientada a escribir mensaje. El mensaje
+	 * es el mismo pero la funcion utilizada dependerÃ¡ del valor booleano que se
 	 * entregue. Si el valor del booleano es verdadero se utiliza la funcion
 	 * System.out.println() la cual agrega un salto de linea posterior a la
-	 * impresion del mensaje, mientras que de ser falso la función ulizada en
+	 * impresion del mensaje, mientras que de ser falso la funciÃ³n ulizada en
 	 * System.out.print() la que no contempla un salto de linea, es decir, se sigue
-	 * ejecutando el código hacia a la derecha de la misma linea del mensaje.
+	 * ejecutando el cÃ³digo hacia a la derecha de la misma linea del mensaje.
 	 * 
 	 * @param mensaje
 	 * @param salto

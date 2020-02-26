@@ -8,6 +8,12 @@ public class OscarLandia {
 		
 		Menu.run();
 		
+		
+		
+		
+		
+		
+		
 		/*
 		
 		Tablero juego = new Tablero();
