@@ -120,7 +120,10 @@ public class Tablero {
 		return huevo;
 	}
 	
-	
+	public void lanzarHuevo(Huevo huevo) {
+		//huevo.setPuntaje(puntaje);
+		
+	}
 	
 	
 	
