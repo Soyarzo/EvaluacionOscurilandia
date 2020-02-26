@@ -27,6 +27,8 @@ public class Menu {
 		escribir(" 6-. Finalizar Juego y mostrar Resumen", true);
 		escribir("", true);
 		escribir("", true);
+		
+		
 
 		ejecutarOpciones();
 	}
