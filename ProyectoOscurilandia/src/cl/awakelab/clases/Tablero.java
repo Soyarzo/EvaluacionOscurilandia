@@ -112,123 +112,133 @@ public class Tablero {
 				carros[posicionCarroNuevo].setFila();	
 				cambioPosicionTablero(j);
 			}
-		
-		/*
-		
-			
-			if(carros[j].getModelo().equals("Kromi")) {
-				
-				do {
-					System.out.println(carros[posicionCarroNuevo].getFila()+","+carros[posicionCarroNuevo].getColumna() +" = " +carros[j].getFila()+","+carros[j].getColumna());
-					if (carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) {
-						carros[posicionCarroNuevo].setColumna();
-						carros[posicionCarroNuevo].setFila();
-						j=0;
-					}else {
-						if (carros[j].getFila()+1==carros[posicionCarroNuevo].getFila()) {
-							carros[posicionCarroNuevo].setFila();
-							j=0;
-						}else {
-							if (carros[j].getFila()+2==carros[posicionCarroNuevo].getFila()) {
-								carros[posicionCarroNuevo].setFila();
-								j=0;
-							}
-						}
-					}
-				}while ((carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) 
-						|| carros[j].getFila()+1==carros[posicionCarroNuevo].getFila() || carros[j].getFila()+2==carros[posicionCarroNuevo].getFila());
-			}
-			
-			if (carros[j].getModelo().equals("Caguano")) {
-				
-				do {
-					System.out.println(carros[posicionCarroNuevo].getFila()+","+carros[posicionCarroNuevo].getColumna() +" = " +carros[j].getFila()+","+carros[j].getColumna());
-					if(carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) {
-						carros[posicionCarroNuevo].setColumna();
-						carros[posicionCarroNuevo].setFila();
-						j=0;
-					}else {
-						if (carros[j].getColumna()+1==carros[posicionCarroNuevo].getColumna()) {
-							carros[posicionCarroNuevo].setColumna();
-							j=0;
-						}
-					}	
-				}while((carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna())
-						|| carros[j].getColumna()+1==carros[posicionCarroNuevo].getColumna());
-			}
-			
-			if (carros[j].getModelo().equals("Trupalla")) {
-				do {
-					System.out.println(carros[posicionCarroNuevo].getFila()+","+carros[posicionCarroNuevo].getColumna() +" = " +carros[j].getFila()+","+carros[j].getColumna());
-					if(carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) {
-						carros[posicionCarroNuevo].setColumna();
-						carros[posicionCarroNuevo].setFila();
-						j=0;
-					}
-				}while(carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna());
-				
-			}	
 		}	
-		
-		
-			public void crearCarro(int modelo) {
-				
-				Carro prueba ;
-				
-				prueba = new Kromi();
-				
-				boolean creado =false;
-				
-				switch(modelo) {
-				
-				case 0:
-					Kromi kromi = new Kromi();
-					
-					for (int i = 0; i<18 && creado!=true;i++) {
-						if (carros[i]==null) {
-							carros[i]=kromi;
-							creado = true;
-							if(i>0) {
-								cambioPosicionTablero(i);	
-							}
-						}
-					}
-					break;
-				case 1:
-					Trupalla trupalla = new Trupalla();
-					
-					for (int i = 0; i<18 && creado!=true;i++) {
-						if (carros[i]==null) {
-							carros[i]=trupalla;
-							creado = true;
-							if(i>0) {
-								cambioPosicionTablero(i);	
-							}
-						}
-					}
-					break;
-				case 2:
-					Caguano caguano = new Caguano();
-					
-					for (int i = 0; i<18 && creado!=true;i++) {
-						if (carros[i]==null) {
-							carros[i]=caguano;
-							creado = true;
-							if(i>0) {
-								cambioPosicionTablero(i);	
-							}
-						}
-					}
-					break;
-				}	
-				
-			}
-			*/
-		}
-		
+	}
+	
+	public Huevo crearHuevo(int fila,int columna) {
+		Huevo huevo = new Huevo(fila,columna);
+		return huevo;
 	}
 	
 	
 	
 	
+	
+	
 }
+
+
+
+
+
+/*
+
+
+if(carros[j].getModelo().equals("Kromi")) {
+	
+	do {
+		System.out.println(carros[posicionCarroNuevo].getFila()+","+carros[posicionCarroNuevo].getColumna() +" = " +carros[j].getFila()+","+carros[j].getColumna());
+		if (carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) {
+			carros[posicionCarroNuevo].setColumna();
+			carros[posicionCarroNuevo].setFila();
+			j=0;
+		}else {
+			if (carros[j].getFila()+1==carros[posicionCarroNuevo].getFila()) {
+				carros[posicionCarroNuevo].setFila();
+				j=0;
+			}else {
+				if (carros[j].getFila()+2==carros[posicionCarroNuevo].getFila()) {
+					carros[posicionCarroNuevo].setFila();
+					j=0;
+				}
+			}
+		}
+	}while ((carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) 
+			|| carros[j].getFila()+1==carros[posicionCarroNuevo].getFila() || carros[j].getFila()+2==carros[posicionCarroNuevo].getFila());
+}
+
+if (carros[j].getModelo().equals("Caguano")) {
+	
+	do {
+		System.out.println(carros[posicionCarroNuevo].getFila()+","+carros[posicionCarroNuevo].getColumna() +" = " +carros[j].getFila()+","+carros[j].getColumna());
+		if(carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) {
+			carros[posicionCarroNuevo].setColumna();
+			carros[posicionCarroNuevo].setFila();
+			j=0;
+		}else {
+			if (carros[j].getColumna()+1==carros[posicionCarroNuevo].getColumna()) {
+				carros[posicionCarroNuevo].setColumna();
+				j=0;
+			}
+		}	
+	}while((carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna())
+			|| carros[j].getColumna()+1==carros[posicionCarroNuevo].getColumna());
+}
+
+if (carros[j].getModelo().equals("Trupalla")) {
+	do {
+		System.out.println(carros[posicionCarroNuevo].getFila()+","+carros[posicionCarroNuevo].getColumna() +" = " +carros[j].getFila()+","+carros[j].getColumna());
+		if(carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) {
+			carros[posicionCarroNuevo].setColumna();
+			carros[posicionCarroNuevo].setFila();
+			j=0;
+		}
+	}while(carros[posicionCarroNuevo].getFila()==carros[j].getFila() && carros[posicionCarroNuevo].getColumna()==carros[j].getColumna());
+	
+}	
+}	
+
+
+public void crearCarro(int modelo) {
+	
+	Carro prueba ;
+	
+	prueba = new Kromi();
+	
+	boolean creado =false;
+	
+	switch(modelo) {
+	
+	case 0:
+		Kromi kromi = new Kromi();
+		
+		for (int i = 0; i<18 && creado!=true;i++) {
+			if (carros[i]==null) {
+				carros[i]=kromi;
+				creado = true;
+				if(i>0) {
+					cambioPosicionTablero(i);	
+				}
+			}
+		}
+		break;
+	case 1:
+		Trupalla trupalla = new Trupalla();
+		
+		for (int i = 0; i<18 && creado!=true;i++) {
+			if (carros[i]==null) {
+				carros[i]=trupalla;
+				creado = true;
+				if(i>0) {
+					cambioPosicionTablero(i);	
+				}
+			}
+		}
+		break;
+	case 2:
+		Caguano caguano = new Caguano();
+		
+		for (int i = 0; i<18 && creado!=true;i++) {
+			if (carros[i]==null) {
+				carros[i]=caguano;
+				creado = true;
+				if(i>0) {
+					cambioPosicionTablero(i);	
+				}
+			}
+		}
+		break;
+	}	
+	
+}
+*/
