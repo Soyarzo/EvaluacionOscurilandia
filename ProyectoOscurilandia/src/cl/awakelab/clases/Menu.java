@@ -64,9 +64,9 @@ public class Menu {
 				mostrarPuntajeActual();
 
 				escribir("Gracias por participar de nuestro Proyecto", true);
-				escribir("Javier", true);
-				escribir("Josue", true);
-				escribir("Manuel", true);
+				escribir("Javier Leiva", true);
+				escribir("Josue Quiriban", true);
+				escribir("Manuel Soto", true);
 			}
 
 		} catch (InputMismatchException e) {
