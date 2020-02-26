@@ -4,8 +4,8 @@ public class Huevo {
 	private int fila;
 	private int columna;
 	private int puntaje;
-	
-	public Huevo (int fila,int columna) {
+
+	public Huevo(int fila, int columna) {
 		this.fila = fila;
 		this.columna = columna;
 		this.puntaje = 0;
@@ -37,11 +37,9 @@ public class Huevo {
 
 	@Override
 	public String toString() {
-		String retorno = String.format("%10s %-5s %10s %-5s%10s %-5s","Fila=",this.fila,"Columna=",this.columna,"Puntaje=",this.puntaje);
+		String retorno = String.format("%10s %-5s %10s %-5s%10s %-5s", "Fila=", this.fila, "Columna=", this.columna,
+				"Puntaje=", this.puntaje);
 		return retorno;
 	}
-	
-	
-	
 
 }

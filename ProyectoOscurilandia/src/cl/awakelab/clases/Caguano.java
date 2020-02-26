@@ -30,7 +30,4 @@ public class Caguano extends Carro {
 		this.colorConfeti = colorConfeti;
 	}
 
-	
-
-
 }

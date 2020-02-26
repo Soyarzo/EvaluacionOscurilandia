@@ -8,8 +8,7 @@ public class Trupalla extends Carro {
 	public Trupalla() {
 		super();
 		RandomData azares = new RandomData();
-		
-		
+
 		setArmadura(azares.getArmadura());
 		setConductor(azares.getNombreCompleto());
 		setModelo("Trupalla");
@@ -30,6 +29,5 @@ public class Trupalla extends Carro {
 	public void setConductor(String conductor) {
 		this.conductor = conductor;
 	}
-
 
 }

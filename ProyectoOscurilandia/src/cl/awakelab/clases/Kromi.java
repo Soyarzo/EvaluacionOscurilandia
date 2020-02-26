@@ -1,14 +1,14 @@
 package cl.awakelab.clases;
 
 public class Kromi extends Carro {
-	
+
 	private String marca;
 	private String fechaFabricacion;
 
 	public Kromi() {
 		super();
 		RandomData azares = new RandomData();
-		
+
 		setMarca(azares.getMarca());
 		setFechaFabricacion(azares.getFecha());
 		setModelo("Kromi");
@@ -29,6 +29,5 @@ public class Kromi extends Carro {
 	public void setFechaFabricacion(String fechaFabricacion) {
 		this.fechaFabricacion = fechaFabricacion;
 	}
-	
-}
 
+}
