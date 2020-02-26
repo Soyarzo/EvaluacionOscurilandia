@@ -1,16 +1,26 @@
 package cl.awakelab.ejecutable;
 
-import cl.awakelab.clases.Tablero;
-import cl.awakelab.clases.Trupalla;
-import cl.awakelab.clases.Carro;
+import cl.awakelab.clases.Menu;
 
 public class OscarLandia {
 
 	public static void main(String[] args) {
 		
+		Menu.run();
+		
+		/*
 		
 		Tablero juego = new Tablero();
 		System.out.println(((Trupalla)juego.getCarros()[10]).getArmadura());
+		
+		String[][] matrizJuego = new String[15][15];
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -32,13 +42,13 @@ public class OscarLandia {
 			
 		}
 		
-		String[][] matrizJuego = new String[15][15];
+		
 		
 		for (int i=0;i<15;i++) {
 			//System.out.print((i+1));
 			for(int j =0;j<15;j++) {
 				//System.out.println(i);
-				matrizJuego[i][j]="[ * ]";
+				matrizJuego[i][j]="| * |";
 				//System.out.print(matrizJuego[i][j]);
 			}
 			//System.out.println("");
@@ -69,7 +79,7 @@ public class OscarLandia {
 		System.out.println("    [0] "+"[1]  "+"[2]  "+"[3]  "+"[4]  "+"[5]  "+"[6]  "+"[7]  "+"[8]  "+"[9]  "+
 		"[10] "+"[11] "+"[12] "+"[13] "+"[14] "+"[15]");
 		for (int i=0;i<15;i++) {
-			System.out.print("["+(i)+"]");
+			System.out.print("|"+(i)+"|");
 			for(int j =0;j<15;j++) {
 			//	System.out.println(i);
 				//matrizJuego[i][j]="[ * ]";
@@ -78,9 +88,21 @@ public class OscarLandia {
 			System.out.println("");
 		}
 
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
 		
 		
+//		System.out.println("     [ 0 ]"+"[ 1 ]"+"[ 2 ]"+"[ 3 ]"+"[ 4 ]"+"[5]  "+"[6]  "+"[7]  "+"[8]  "+"[9]  "+
+//				"[10] "+"[11] "+"[12] "+"[13] "+"[14] ");
 		
+		juego.mostrarMatrizCarros();		
+//		System.out.println("     [ 0 ]"+"[ 1 ]"+"[ 2 ]"+"[ 3 ]"+"[ 4 ]"+"[5]  "+"[6]  "+"[7]  "+"[8]  "+"[9]  "+
+//				"[10] "+"[11] "+"[12] "+"[13] "+"[14] ");
+//		
+		
+		
+		*/
 	}
 
 }

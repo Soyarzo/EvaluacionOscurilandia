@@ -14,12 +14,19 @@ public class Tablero {
 
 	private Carro[] carros;
 	private ArrayList<Huevo> huevos;
+
+	private String[][] matrizJugador;
+	private String[][] matrizCarros;
 	
 	
 	public Tablero() {
 		carros = new Carro[18];
 		huevos = new ArrayList();	
+		matrizJugador = new String[15][15];
+		matrizCarros = new String[15][15];
 		llenarTablero();
+		llenarMatrizBlanco();
+		rellenarMatrizCarros();
 	}
 	
 	public Carro[] getCarros() {
@@ -103,9 +110,12 @@ public class Tablero {
 		for (int j=0; j<posicionCarroNuevo;j++) {
 			condicion =((carros[posicionCarroNuevo].getFila()==carros[j].getFila() &&
 					carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) ||
-					carros[j].getFila()+1==carros[posicionCarroNuevo].getFila() ||
-					carros[j].getFila()+2==carros[posicionCarroNuevo].getFila() ||
-					carros[j].getColumna()+1==carros[posicionCarroNuevo].getColumna());
+					(carros[j].getFila()+1==carros[posicionCarroNuevo].getFila() &&
+					carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) ||
+					(carros[j].getFila()+2==carros[posicionCarroNuevo].getFila() &&
+					carros[posicionCarroNuevo].getColumna()==carros[j].getColumna()) ||
+					(carros[posicionCarroNuevo].getFila()==carros[j].getFila() &&
+					carros[j].getColumna()+1==carros[posicionCarroNuevo].getColumna()));
 			
 			if(condicion) {
 				carros[posicionCarroNuevo].setColumna();
@@ -121,10 +131,107 @@ public class Tablero {
 	}
 	
 	public void lanzarHuevo(Huevo huevo) {
-		//huevo.setPuntaje(puntaje);
+		
+		if(this.matrizCarros[huevo.getFila()][huevo.getColumna()].equals("| K |")) {
+			huevo.setPuntaje(3);
+			this.matrizJugador[huevo.getFila()][huevo.getColumna()]="| H |";
+			this.matrizCarros[huevo.getFila()][huevo.getColumna()]="| H |";
+		}else if (this.matrizCarros[huevo.getFila()][huevo.getColumna()].equals("| C |")) {
+			huevo.setPuntaje(2);
+			this.matrizJugador[huevo.getFila()][huevo.getColumna()]="| H |";
+			this.matrizCarros[huevo.getFila()][huevo.getColumna()]="| H |";
+		}else if (this.matrizCarros[huevo.getFila()][huevo.getColumna()].equals("| T |")) {
+			huevo.setPuntaje(2);
+			this.matrizJugador[huevo.getFila()][huevo.getColumna()]="| H |";
+			this.matrizCarros[huevo.getFila()][huevo.getColumna()]="| H |";
+		}else
+			this.matrizJugador[huevo.getFila()][huevo.getColumna()]="| H |";
+			this.matrizCarros[huevo.getFila()][huevo.getColumna()]="| H |";
+		huevos.add(huevo);
 		
 	}
 	
+	public void mostrarMatrizCarros() {
+		String print1;
+		mostrarCoordenadas();
+		for (int i = 0; i<this.matrizCarros.length;i++) {
+			 print1=  i + "  ";
+			System.out.printf("%5s",print1);
+			for (int j = 0; j<this.matrizCarros.length;j++) {
+				System.out.printf("%5s",this.matrizCarros[i][j]);
+			}
+			print1 = "  "+ i ;
+			System.out.print(print1);
+			System.out.println("");
+		}
+		mostrarCoordenadas();
+	}
+	
+	public void mostrarMatrizJugador() {
+		String print1;
+		mostrarCoordenadas();
+		for (int i = 0; i<this.matrizJugador.length;i++) {
+			 print1=  i + "  ";
+			System.out.printf("%5s",print1);
+			for (int j = 0; j<this.matrizJugador.length;j++) {
+				System.out.printf("%5s",this.matrizJugador[i][j]);
+			}
+			print1 = "  "+ i ;
+			System.out.print(print1);
+			System.out.println("");
+		}
+		mostrarCoordenadas();
+	}
+	
+	
+	private void mostrarCoordenadas() {
+		System.out.print("     ");
+		for (int i=0;i<15;i++) {
+		//String print = "[ "+i +"]";
+			System.out.printf("%1s%-2s%1s","[ ",i,"]");
+		}
+
+		System.out.println("");
+	}
+	
+	public void llenarMatrizBlanco() {
+		
+		for (int i=0;i<15;i++) {
+			for (int j =0;j<15;j++) {
+				this.matrizCarros[i][j]="|   |";
+				this.matrizJugador[i][j]="|   |";
+			}
+		}
+	}
+	
+	public void rellenarMatrizCarros() {
+		for (int i = 0; i<carros.length;i++) {
+			if( carros[i].getModelo().equals("Kromi")) {
+				llenarMatriz((Kromi)carros[i]);
+			}else if (carros[i].getModelo().equals("Caguano")) {
+				llenarMatriz((Caguano)carros[i]);
+			}else
+				llenarMatriz((Trupalla)carros[i]);
+		}
+		
+	}
+	
+	
+	private void llenarMatriz(Kromi kromi) {
+		this.matrizCarros[kromi.getFila()][kromi.getColumna()]="| K |";
+		this.matrizCarros[kromi.getFila()+1][kromi.getColumna()]="| K |";
+		this.matrizCarros[kromi.getFila()+2][kromi.getColumna()]="| K |";	
+	}	
+	
+	private void llenarMatriz(Caguano caguano) {
+		this.matrizCarros[caguano.getFila()][caguano.getColumna()]="| C |";
+		this.matrizCarros[caguano.getFila()][caguano.getColumna()+1]="| C |";			
+	}
+	
+	private void llenarMatriz(Trupalla Trupalla) {
+		this.matrizCarros[Trupalla.getFila()][Trupalla.getColumna()]="| T |";
+		
+	}
 	
 	
 	

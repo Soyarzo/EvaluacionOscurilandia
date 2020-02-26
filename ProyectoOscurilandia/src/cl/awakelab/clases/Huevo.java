@@ -34,6 +34,13 @@ public class Huevo {
 	public void setPuntaje(int puntaje) {
 		this.puntaje = puntaje;
 	}
+
+	@Override
+	public String toString() {
+		String retorno = String.format("%10s %-5s %10s %-5s%10s %-5s","Fila=",this.fila,"Columna=",this.columna,"Puntaje=",this.puntaje);
+		return retorno;
+	}
+	
 	
 	
 
