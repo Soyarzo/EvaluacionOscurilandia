@@ -2,8 +2,9 @@
 package cl.awakelab.clases;
 
 /**
- * Esta Clase contiene la biblioteca de Nombres, Apellidos,
- *  Marcas y colores que se utilizaran a lo largo del programa.
+ * Esta Clase contiene la biblioteca de Nombres, Apellidos, Marcas y colores que
+ * se utilizaran a lo largo del programa.
+ * 
  * @author Manuel Soto, Josue Quiriban, Javier Leiva
  */
 public class RandomData {
@@ -11,48 +12,41 @@ public class RandomData {
 	/**
 	 * Arreglo String de Nombres, Contiene todos los nombres de la biblioteca.
 	 */
-	private final String[] NOMBRES = { "Isabella", "Sofia", "Agustina",
-			"Emilia", "Josefa", "Isidora", "Emma", "Trinidad", "Florencia",
-			"Julieta", "Maite", "Maria", "Amanda", "Antonella", "Martina",
-			"Valentina", "Catalina", "Leonor", "Renata", "Mia", "Mateo",
-			"Agustin", "Santiago", "Tomas", "Benjamin", "Lucas",
-			"Gaspar", "Alonso", "Vicente", "Maximiliano", "Joaquin",
-			"Matias", "Martin", "Jose", "Luciano", "Facundo", "Julian",
-			"Gabriel", "Maximo", "Juan" };
+	private final String[] NOMBRES = { "Isabella", "Sofia", "Agustina", "Emilia", "Josefa", "Isidora", "Emma",
+			"Trinidad", "Florencia", "Julieta", "Maite", "Maria", "Amanda", "Antonella", "Martina", "Valentina",
+			"Catalina", "Leonor", "Renata", "Mia", "Mateo", "Agustin", "Santiago", "Tomas", "Benjamin", "Lucas",
+			"Gaspar", "Alonso", "Vicente", "Maximiliano", "Joaquin", "Matias", "Martin", "Jose", "Luciano", "Facundo",
+			"Julian", "Gabriel", "Maximo", "Juan" };
 
 	/**
 	 * String Apellidos Contiene todos los apellidos de la biblioteca.
 	 */
-	private final String[] APELLIDOS = { "Gonzalez", "Munoz", "Rojas", "Diaz",
-			"Perez", "Soto", "Contreras", "Silva","Martinez", "Sepulveda", 
-			"Morales", "Rodriguez", "Lopez", "Fuentes", "Hernandez", "Torres",
-			"Araya","Flores", "Espinoza", "Valenzuela", "Castillo", "Ramirez",
-			"Reyes", "Gutierrez", "Castro", "Vargas", "alvarez", "Vasquez", 
-			"Tapia", "Fernandez", "Sanchez", "Carrasco", "Gomez", "Cortes",
-			"Herrera", "Nunez", "Jara", "Vergara", "Rivera", "Figueroa" };
+	private final String[] APELLIDOS = { "Gonzalez", "Munoz", "Rojas", "Diaz", "Perez", "Soto", "Contreras", "Silva",
+			"Martinez", "Sepulveda", "Morales", "Rodriguez", "Lopez", "Fuentes", "Hernandez", "Torres", "Araya",
+			"Flores", "Espinoza", "Valenzuela", "Castillo", "Ramirez", "Reyes", "Gutierrez", "Castro", "Vargas",
+			"alvarez", "Vasquez", "Tapia", "Fernandez", "Sanchez", "Carrasco", "Gomez", "Cortes", "Herrera", "Nunez",
+			"Jara", "Vergara", "Rivera", "Figueroa" };
 
 	/**
 	 * String de Marcas Contiene todas las marcas de la biblioteca.
 	 */
-	public final String[] MARCAS = { "Scania", "Man", "Volvo", 
-			"Mercedes", "Isuzu", "GMC", "Hino", "Ford", "Hummer",
+	public final String[] MARCAS = { "Scania", "Man", "Volvo", "Mercedes", "Isuzu", "GMC", "Hino", "Ford", "Hummer",
 			"Mack Trucks" };
 
 	/**
 	 * String de Colores Contiene todos los colores de la biblioteca.
 	 */
-	public final String[] COLORES = { "Azul", "Rojo", "Negro", "Verde", 
-			"Rosado", "Amarillo" };
+	public final String[] COLORES = { "Azul", "Rojo", "Negro", "Verde", "Rosado", "Amarillo" };
 
 	/**
-	 * @param nombre Este atributo se refiere a un String de nombre.
+	 * @param nombre   Este atributo se refiere a un String de nombre.
 	 * @param apellido Este atributo se refiere a un String de apellido.
-	 * @param marca Este atributo se refiere a un String de marca.
-	 * @param dia Este atributo es un int de Dia.
-	 * @param mes Este atributo es un int de mes.
-	 * @param year Este atributo es un int de año.
-	 * @param alcance Este atributo es un int de alcance.
-	 * @param color Este atributo es un String de color.
+	 * @param marca    Este atributo se refiere a un String de marca.
+	 * @param dia      Este atributo es un int de Dia.
+	 * @param mes      Este atributo es un int de mes.
+	 * @param year     Este atributo es un int de año.
+	 * @param alcance  Este atributo es un int de alcance.
+	 * @param color    Este atributo es un String de color.
 	 * @param armadura Este atributo es un int de armadura.
 	 */
 	private String nombre;
@@ -65,8 +59,8 @@ public class RandomData {
 
 	/**
 	 * Constructor por defecto que llama a los metodos generarNombre,
-	 * generarApellido, generarMarca, generarFecha, generarAlcance, 
-	 * generarColor, generarArmadura.
+	 * generarApellido, generarMarca, generarFecha, generarAlcance, generarColor,
+	 * generarArmadura.
 	 */
 	public RandomData() {
 		this.generarNombre();
@@ -86,8 +80,7 @@ public class RandomData {
 	}
 
 	/**
-	 * Metodo que genera el apellido por azar en base a la biblioteca
-	 * de apellidos.
+	 * Metodo que genera el apellido por azar en base a la biblioteca de apellidos.
 	 */
 	private void generarApellido() {
 		this.apellido = APELLIDOS[(int) (Math.random() * APELLIDOS.length)];
@@ -95,6 +88,7 @@ public class RandomData {
 
 	/**
 	 * Metodo que genera el nombre completo en base a nombre y apellido.
+	 * 
 	 * @return nombreCompleto.
 	 */
 	public String getNombreCompleto() {
@@ -110,6 +104,7 @@ public class RandomData {
 
 	/**
 	 * Metodo que obtiene el valor de la marca.
+	 * 
 	 * @return marca
 	 */
 	public String getMarca() {
@@ -138,8 +133,7 @@ public class RandomData {
 	}
 
 	/**
-	 * Metodo que genera la fecha con la obtencion de datos
-	 * del dia, mes y año.
+	 * Metodo que genera la fecha con la obtencion de datos del dia, mes y año.
 	 */
 	private void generarFecha() {
 		setMes();
@@ -149,6 +143,7 @@ public class RandomData {
 
 	/**
 	 * Este metodo obtiene la fecha en base al dia, mes y año.
+	 * 
 	 * @return Fecha.
 	 */
 	public String getFecha() {
@@ -156,8 +151,8 @@ public class RandomData {
 	}
 
 	/**
-	 * Metodo que genera el alcance del objeto Carro por medio de
-	 * un azar entre 1 y 15.
+	 * Metodo que genera el alcance del objeto Carro por medio de un azar entre 1 y
+	 * 15.
 	 */
 	private void generarAlcance() {
 		this.alcance = azar(1, 15);
@@ -165,6 +160,7 @@ public class RandomData {
 
 	/**
 	 * Metodo que obtiene el Alcance.
+	 * 
 	 * @return alcance.
 	 */
 	public int getAlcance() {
@@ -172,8 +168,7 @@ public class RandomData {
 	}
 
 	/**
-	 * Este metodo genera el color con un azar de la biblioteca
-	 * de colores.
+	 * Este metodo genera el color con un azar de la biblioteca de colores.
 	 */
 	private void generarColor() {
 		this.color = COLORES[(int) (Math.random() * COLORES.length)];
@@ -181,6 +176,7 @@ public class RandomData {
 
 	/**
 	 * Este metodo obtiene el color.
+	 * 
 	 * @return color
 	 */
 	public String getColor() {
@@ -188,8 +184,7 @@ public class RandomData {
 	}
 
 	/**
-	 * Este metodo modifica el valor de armadura por medio
-	 * de un azar entre 0 y 5.
+	 * Este metodo modifica el valor de armadura por medio de un azar entre 0 y 5.
 	 */
 	private void generarArmadura() {
 		this.armadura = azar(0, 5);
@@ -197,6 +192,7 @@ public class RandomData {
 
 	/**
 	 * Metodo que obtiene el valor de armadura.
+	 * 
 	 * @return armadura.
 	 */
 	public int getArmadura() {
@@ -205,6 +201,7 @@ public class RandomData {
 
 	/**
 	 * Metodo que realiza el azar.
+	 * 
 	 * @param desde parametro que da el rango.
 	 * @param hasta parametro que da el rango.
 	 * @return azar.

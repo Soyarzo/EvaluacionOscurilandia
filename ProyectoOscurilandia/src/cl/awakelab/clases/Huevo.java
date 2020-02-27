@@ -2,24 +2,26 @@ package cl.awakelab.clases;
 
 /**
  * Clase Huevo es la que tiene los atributos fila, columna, puntaje.
+ * 
  * @author Manuel Soto, Josue Quiriban, Javier Leiva
  *
  */
 public class Huevo {
 	/**
-	 * @param fila Indica posicion en el arreglo.
+	 * @param fila    Indica posicion en el arreglo.
 	 * @param columna Indica poscion en el arreglo.
-	 * @param puntaje Indica el puntaje otorgado en caso 
-	 * de eliminar un objeto de tipo Carro.
+	 * @param puntaje Indica el puntaje otorgado en caso de eliminar un objeto de
+	 *                tipo Carro.
 	 */
 	private int fila;
 	private int columna;
 	private int puntaje;
 
 	/**
-	 * Constructor por defecto que le da el valor por 
-	 * defecto a fila, columna y puntaje.
-	 * @param fila Ubicacion en el arreglo.
+	 * Constructor por defecto que le da el valor por defecto a fila, columna y
+	 * puntaje.
+	 * 
+	 * @param fila    Ubicacion en el arreglo.
 	 * @param columna Ubicacion en el arreglo.
 	 */
 	public Huevo(int fila, int columna) {
@@ -28,7 +30,7 @@ public class Huevo {
 		this.puntaje = 0;
 	}
 
-	//Metodos Get y Set.
+	// Metodos Get y Set.
 	public int getFila() {
 		return fila;
 	}
@@ -53,7 +55,7 @@ public class Huevo {
 		this.puntaje = puntaje;
 	}
 
-	//Metodo toString.
+	// Metodo toString.
 	@Override
 	public String toString() {
 		String retorno = String.format("%10s %-5s %10s %-5s%10s %-5s", "Fila=", this.fila, "Columna=", this.columna,

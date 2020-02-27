@@ -4,13 +4,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Esta clase nos genera la vista del menu al usuario, contiene 
- * los atributos juego, seleccion.
+ * Esta clase nos genera la vista del menu al usuario, contiene los atributos
+ * juego, seleccion.
+ * 
  * @author Manuel Soto, Josue Quiriban, Javier Leiva
  *
  */
 public class Menu {
-	
+
 	/**
 	 * @param juego
 	 * @param seleccion
@@ -23,11 +24,9 @@ public class Menu {
 	 */
 	private static void bienvenida() {
 		escribir("  --** Bienvenidos ciudadanos de Oscurilandia", true);
-		escribir("  --** Ayuda a nuestros superheroes anonimos"
-				+ " FirstLine", true);
+		escribir("  --** Ayuda a nuestros superheroes anonimos" + " FirstLine", true);
 		escribir("  --** a derrotar a la elite de seguridad PKS", true);
-		escribir("  --** Sigue las intrucciones para eliminar a los"
-				+ " enemigos", true);
+		escribir("  --** Sigue las intrucciones para eliminar a los" + " enemigos", true);
 		escribir("  --** Situados en la camara Secreta", true);
 
 	}
@@ -46,8 +45,6 @@ public class Menu {
 		escribir(" 6-. Finalizar Juego y mostrar Resumen", true);
 		escribir("", true);
 		escribir("", true);
-		
-		
 
 		ejecutarOpciones();
 	}
@@ -58,26 +55,25 @@ public class Menu {
 	private static void ejecutarOpciones() {
 
 		try {
-			seleccion = leerEntero("ingrese una de las alternativas "
-					+ "mensionadas");
+			seleccion = leerEntero("ingrese una de las alternativas " + "mensionadas");
 
 			switch (seleccion) {
 			case 1:
 				try {
-					int fila=0;
-					int columna=0;
-					boolean condicion; 
+					int fila = 0;
+					int columna = 0;
+					boolean condicion;
 					do {
-						escribir("ingresar nuemero entre 0 y 14",true);
-						
-						fila=leerEntero("Ingrese fila");
-						columna =leerEntero("ingrese columna");
-						condicion = (fila>14 || fila<0 || columna<0 || columna>14);	
-					}while(condicion);
-					juego.lanzarHuevo(juego.crearHuevo(fila,columna ));
+						escribir("ingresar nuemero entre 0 y 14", true);
+
+						fila = leerEntero("Ingrese fila");
+						columna = leerEntero("ingrese columna");
+						condicion = (fila > 14 || fila < 0 || columna < 0 || columna > 14);
+					} while (condicion);
+					juego.lanzarHuevo(juego.crearHuevo(fila, columna));
 				} catch (InputMismatchException e) {
-					System.out.println("ingrese solo numeros "+e);
-					
+					System.out.println("ingrese solo numeros " + e);
+
 				}
 				break;
 
@@ -144,6 +140,7 @@ public class Menu {
 
 	/**
 	 * Metodo que lee la opcion del usuario
+	 * 
 	 * @param mensaje mensaje entregado por el usuario
 	 * @return entrada.
 	 */
@@ -155,8 +152,9 @@ public class Menu {
 
 	/**
 	 * Metodo que escribe al usuario.
+	 * 
 	 * @param mensaje Es lo que se muestra al usuario.
-	 * @param salto espacio entre palabras.
+	 * @param salto   espacio entre palabras.
 	 */
 	private static void escribir(String mensaje, boolean salto) {
 		if (salto) {
