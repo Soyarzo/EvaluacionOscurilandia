@@ -3,19 +3,37 @@ package cl.awakelab.clases;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Esta clase nos genera la vista del menu al usuario, contiene los atributos
+ * juego, seleccion.
+ * 
+ * @author Manuel Soto, Josue Quiriban, Javier Leiva
+ *
+ */
 public class Menu {
+
+	/**
+	 * @param juego
+	 * @param seleccion
+	 */
 	private static Tablero juego;
 	private static int seleccion;
 
+	/**
+	 * Metodo que genera el mensaje de bienvenida al usuario.
+	 */
 	private static void bienvenida() {
 		escribir("  --** Bienvenidos ciudadanos de Oscurilandia", true);
-		escribir("  --** Ayuda a nuestros superheroes anonimos FirstLine", true);
+		escribir("  --** Ayuda a nuestros superheroes anonimos" + " FirstLine", true);
 		escribir("  --** a derrotar a la elite de seguridad PKS", true);
-		escribir("  --** Sigue las intrucciones para eliminar a los enemigos", true);
+		escribir("  --** Sigue las intrucciones para eliminar a los" + " enemigos", true);
 		escribir("  --** Situados en la camara Secreta", true);
 
 	}
 
+	/**
+	 * Metodo que entrega las opciones al usuario.
+	 */
 	private static void menuOpciones() {
 		escribir("", true);
 		escribir("", true);
@@ -27,34 +45,35 @@ public class Menu {
 		escribir(" 6-. Finalizar Juego y mostrar Resumen", true);
 		escribir("", true);
 		escribir("", true);
-		
-		
 
 		ejecutarOpciones();
 	}
 
+	/**
+	 * Metodo que lee la opcion del usuario y ejecuta sus acciones.
+	 */
 	private static void ejecutarOpciones() {
 
 		try {
-			seleccion = leerEntero("ingrese una de las alternativas mensionadas");
+			seleccion = leerEntero("ingrese una de las alternativas " + "mensionadas");
 
 			switch (seleccion) {
 			case 1:
 				try {
-					int fila=0;
-					int columna=0;
-					boolean condicion; 
+					int fila = 0;
+					int columna = 0;
+					boolean condicion;
 					do {
-						escribir("ingresar nuemero entre 0 y 14",true);
-						
-						fila=leerEntero("Ingrese fila");
-						columna =leerEntero("ingrese columna");
-						condicion = (fila>14 || fila<0 || columna<0 || columna>14);	
-					}while(condicion);
-					juego.lanzarHuevo(juego.crearHuevo(fila,columna ));
+						escribir("ingresar nuemero entre 0 y 14", true);
+
+						fila = leerEntero("Ingrese fila");
+						columna = leerEntero("ingrese columna");
+						condicion = (fila > 14 || fila < 0 || columna < 0 || columna > 14);
+					} while (condicion);
+					juego.lanzarHuevo(juego.crearHuevo(fila, columna));
 				} catch (InputMismatchException e) {
-					System.out.println("ingrese solo numeros "+e);
-					
+					System.out.println("ingrese solo numeros " + e);
+
 				}
 				break;
 
@@ -88,12 +107,18 @@ public class Menu {
 		}
 	}
 
+	/**
+	 * Metodo que muestra los lanzamientos echos por el usuario.
+	 */
 	public static void mostrarLanzamientos() {
 		for (Huevo huevos : juego.getHuevos()) {
 			escribir(huevos.toString(), true);
 		}
 	}
 
+	/**
+	 * Metodo que muestra el puntaje que lleva hasta el momento el usuario.
+	 */
 	public static void mostrarPuntajeActual() {
 		int sumaPuntaje = 0;
 		for (Huevo huevos : juego.getHuevos()) {
@@ -102,6 +127,9 @@ public class Menu {
 		escribir("el puntaje acumulado actual es " + sumaPuntaje, true);
 	}
 
+	/**
+	 * Metodo que ejecuta el tablero.
+	 */
 	public static void run() {
 		juego = new Tablero();
 		bienvenida();
@@ -110,6 +138,12 @@ public class Menu {
 		} while (seleccion != 6);
 	}
 
+	/**
+	 * Metodo que lee la opcion del usuario
+	 * 
+	 * @param mensaje mensaje entregado por el usuario
+	 * @return entrada.
+	 */
 	public static int leerEntero(String mensaje) {
 		escribir(mensaje, true);
 		Scanner entrada = new Scanner(System.in);
@@ -117,16 +151,10 @@ public class Menu {
 	}
 
 	/**
-	 * El mÃ©todo escribir() es una funciÃ³n orientada a escribir mensaje. El mensaje
-	 * es el mismo pero la funcion utilizada dependerÃ¡ del valor booleano que se
-	 * entregue. Si el valor del booleano es verdadero se utiliza la funcion
-	 * System.out.println() la cual agrega un salto de linea posterior a la
-	 * impresion del mensaje, mientras que de ser falso la funciÃ³n ulizada en
-	 * System.out.print() la que no contempla un salto de linea, es decir, se sigue
-	 * ejecutando el cÃ³digo hacia a la derecha de la misma linea del mensaje.
+	 * Metodo que escribe al usuario.
 	 * 
-	 * @param mensaje
-	 * @param salto
+	 * @param mensaje Es lo que se muestra al usuario.
+	 * @param salto   espacio entre palabras.
 	 */
 	private static void escribir(String mensaje, boolean salto) {
 		if (salto) {

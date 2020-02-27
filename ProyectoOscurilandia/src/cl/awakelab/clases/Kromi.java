@@ -1,10 +1,26 @@
 package cl.awakelab.clases;
 
+/**
+ * Clase Kromi hereda los atributos y metodos de clase padre Carro, tiene los
+ * atributos marca y fecha de fabricacion.
+ * 
+ * @author Manuel Soto, Josue Quiriban, Javier Leiva
+ *
+ */
 public class Kromi extends Carro {
 
+	/**
+	 * @param marca            Este atributo se refiere a la marca del vehiculo
+	 *                         Kromi.
+	 * @param fechaFabricacion Se refiere a la fecha de fabricacion de Kromi.
+	 */
 	private String marca;
 	private String fechaFabricacion;
 
+	/**
+	 * Constructor por defecto que da el valor por azar a marca, fecha de
+	 * fabricacion y modelo Kromi.
+	 */
 	public Kromi() {
 		super();
 		RandomData azares = new RandomData();
@@ -14,6 +30,7 @@ public class Kromi extends Carro {
 		setModelo("Kromi");
 	}
 
+	// Metodos Get y Set.
 	public String getMarca() {
 		return marca;
 	}
@@ -21,17 +38,11 @@ public class Kromi extends Carro {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	/**
-	 * Metodo utilizado para acceder a la fecha de fabricacion de el carro kromi
-	 * @return String fachaFabricacion
-	 */
+
 	public String getFechaFabricacion() {
 		return fechaFabricacion;
 	}
-	/**
-	 * 
-	 * @param fechaFabricacion
-	 */
+
 	public void setFechaFabricacion(String fechaFabricacion) {
 		this.fechaFabricacion = fechaFabricacion;
 	}
