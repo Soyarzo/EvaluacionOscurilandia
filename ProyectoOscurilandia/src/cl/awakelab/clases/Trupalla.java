@@ -9,6 +9,7 @@ package cl.awakelab.clases;
  */
 public class Trupalla extends Carro {
 
+	
 	/**
 	 * @param armadura  Se refiere al nivel de armadura que tiene el carro, este
 	 *                  esta definido por un azar.
